@@ -1,0 +1,71 @@
+{# SPDX-License-Identifier: MIT #}
+<div class="itcore-settings container-fluid">
+    <h2 class="mb-3">{{ schema.title }}</h2>
+    <p><a class="btn btn-outline-secondary" href="{{ migration_url }}">Перенос устройств</a></p>
+    {% if message %}<div class="alert alert-success">{{ message }}</div>{% endif %}
+    {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+    <form method="post" id="itcore-settings-form">
+        <input type="hidden" name="_glpi_csrf_token" value="{{ glpi_csrf }}">
+        <input type="hidden" name="_itcore_csrf" value="{{ csrf }}">
+        <input type="hidden" name="revision" value="{{ revision }}">
+        <input type="hidden" name="restore_id" id="settings-restore-id">
+        <input type="hidden" name="active_tab" id="settings-active-tab" value="{{ active }}">
+        <textarea hidden style="display:none!important" id="itcore-settings-values"
+                  name="settings_json">{{ settings|json_encode }}</textarea>
+        <textarea hidden style="display:none!important" id="itcore-settings-schema">{{ schema|json_encode }}</textarea>
+        <textarea hidden style="display:none!important" id="itcore-settings-options">{}</textarea>
+        <div class="card">
+            <div class="staff-layout">
+                <nav class="staff-nav nav nav-pills flex-column" role="tablist">
+                    {% for id, tab in tabs %}
+                        <button class="nav-link{{ id == active ? ' active' : '' }}" type="button"
+                                data-settings-tab="{{ id }}" role="tab" aria-selected="{{ id == active ? 'true' : 'false' }}">
+                            <i class="ti {{ tab.icon|default('ti-settings') }}" aria-hidden="true"></i> {{ tab.label }}
+                        </button>
+                    {% endfor %}
+                </nav>
+                <div class="staff-content">
+                    <div id="itcore-settings-editor"></div>
+                    <section data-settings-section="preview" hidden>
+                        <h3 class="staff-panel-title">Проверка без сохранения</h3>
+                        <p class="text-muted">{{ schema.preview_hint|default('Проверка не изменяет данные.') }}</p>
+                        {% for field in preview_fields %}
+                            <div class="staff-form-row">
+                                <label class="form-label" for="preview-{{ field.key }}">{{ field.label }}</label>
+                                <input class="form-control" id="preview-{{ field.key }}"
+                                       name="preview[{{ field.key }}]" value="{{ field.value }}">
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-outline-primary" name="action" value="preview">
+                            <i class="ti ti-eye"></i> Проверить
+                        </button>
+                        {% if preview is not null %}<div class="mt-3">{{ preview|raw }}</div>{% endif %}
+                    </section>
+                    <section data-settings-section="history" hidden>
+                        <h3 class="staff-panel-title">История настроек</h3>
+                        <table class="table table-sm">
+                            <thead><tr><th>Дата</th><th>Пользователь</th><th></th></tr></thead>
+                            <tbody>
+                            {% for item in history %}
+                                <tr><td>{{ item.date }}</td><td>{{ item.user_label }}</td><td>
+                                    <button type="submit" class="btn btn-outline-secondary btn-sm"
+                                            name="action" value="restore" data-settings-restore="{{ item.id }}">
+                                        Восстановить
+                                    </button>
+                                </td></tr>
+                            {% else %}
+                                <tr><td colspan="3" class="text-muted text-center py-4">Сохранённых редакций пока нет</td></tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <button type="submit" name="action" value="save" class="btn btn-primary">
+                    <i class="ti ti-device-floppy"></i> Сохранить
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

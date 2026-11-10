@@ -1,0 +1,19 @@
+/* SPDX-License-Identifier: MIT */
+#itcore-dock-settings [hidden]{display:none!important}
+#itcore-dock-settings .dock-toolbar,#itcore-dock-settings .dock-buttons,#itcore-dock-settings .dock-context{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+#itcore-dock-settings .dock-toolbar{justify-content:space-between}
+#itcore-dock-settings .dock-context .form-select,#itcore-dock-settings .dock-buttons .form-select{width:auto;max-width:100%}
+#itcore-dock-settings .dock-editor{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--tblr-border-color)}
+#itcore-dock-settings .dock-result{display:grid;grid-template-columns:170px minmax(0,1fr);gap:.6rem 1rem}
+#itcore-dock-settings .dock-result dd{margin:0;overflow-wrap:anywhere}
+#itcore-dock-settings td:last-child .btn{margin:.15rem}
+#itcore-dock-settings dialog.dock-confirm{position:fixed;inset:0;margin:auto;padding:1.5rem;max-width:min(520px,90vw);border:1px solid var(--tblr-border-color);color:var(--tblr-body-color);background:var(--tblr-bg-surface);z-index:2000}
+#itcore-dock-settings dialog.dock-confirm::backdrop{background:rgba(0,0,0,.5)}
+#itcore-dock-settings .tab-content{min-width:0}
+#itcore-dock-settings .dock-list-container .form-select{width:auto;max-width:180px}
+#itcore-dock-settings .dock-list-container .form-control[type=search]{width:calc(100% - 1rem);margin:.5rem}
+#itcore-dock-settings .dock-settings-list th .btn{font-size:inherit;color:inherit;text-transform:inherit;font-weight:inherit}
+#itcore-dock-settings .dock-settings-list th:first-child,#itcore-dock-settings .dock-settings-list td:first-child{width:2rem}
+#itcore-dock-settings .dock-column-menu{position:absolute;right:0;top:100%;z-index:20;min-width:210px}
+#itcore-dock-settings .dock-list-container details>summary{list-style:none}
+@media(max-width:767px){#itcore-dock-settings .dock-result{grid-template-columns:1fr}}

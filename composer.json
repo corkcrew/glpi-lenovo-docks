@@ -1,0 +1,26 @@
+{
+    "name": "itcore/glpi-docks",
+    "description": "Native Lenovo docking station assets for GLPI 12",
+    "type": "glpi-plugin",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.4",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-simplexml": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GlpiPlugin\\Itcoreinventory\\": "src/"
+        }
+    },
+    "scripts": {
+        "lint": "php tools/lint.php",
+        "style": "phpcs",
+        "style:fix": "phpcbf",
+        "test": "php tests/profiles.php"
+    }
+}

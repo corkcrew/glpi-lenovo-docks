@@ -1,0 +1,62 @@
+{
+  "3082": {
+    "name": "ThinkPad Thunderbolt 3 Essential Dock",
+    "model": "40AV"
+  },
+  "3069": {
+    "name": "ThinkPad Thunderbolt 3 Dock",
+    "model": "40AC"
+  },
+  "A359": {
+    "name": "ThinkPad Hybrid USB-C with USB-A Dock",
+    "model": "40AF"
+  },
+  "A387": {
+    "name": "ThinkPad USB-C Dock Gen 2",
+    "model": "40AS"
+  },
+  "3062": {
+    "name": "ThinkPad USB-C Dock",
+    "model": "40A9"
+  },
+  "30A9": {
+    "name": "ThinkPad Universal USB-C Dock",
+    "model": "40AY"
+  },
+  "3105": {
+    "name": "ThinkPad Universal USB-C Dock",
+    "model": "40AY"
+  },
+  "30CA": {
+    "name": "Thinkpad Universal USB-C Smart Dock",
+    "model": "40B2"
+  },
+  "30B5": {
+    "name": "ThinkPad Universal Thunderbolt 4 Dock",
+    "model": "40B0"
+  },
+  "30FC": {
+    "name": "Lenovo USB-C Dock (Windows Only)",
+    "model": "40B5"
+  },
+  "30F0": {
+    "name": "ThinkPad Universal USB-C Dock v2",
+    "model": "40B7"
+  },
+  "310D": {
+    "name": "ThinkPad Thunderbolt 5 Smart Dock",
+    "model": "40BA"
+  },
+  "111E": {
+    "name": "Lenovo ThinkPad USB4 Smart Dock 5500",
+    "model": "40BC"
+  },
+  "A5D9": {
+    "name": "Lenovo ThinkPad Thunderbolt 4 Smart Dock Gen 2 7500",
+    "model": "40BE"
+  },
+  "1193": {
+    "name": "Lenovo ThinkPad USB4 Dock 5000",
+    "model": "40BF"
+  }
+}

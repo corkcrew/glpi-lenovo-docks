@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset name="ITCORE docking stations">
+    <description>PHP-FIG PSR-12 for plugin sources, including PSR-1 namespaces.</description>
+    <rule ref="PSR12"/>
+    <file>setup.php</file>
+    <file>hook.php</file>
+    <file>inc</file>
+    <file>src</file>
+    <file>front</file>
+    <file>tests</file>
+    <file>tools</file>
+    <arg name="extensions" value="php"/>
+    <arg name="encoding" value="utf-8"/>
+</ruleset>

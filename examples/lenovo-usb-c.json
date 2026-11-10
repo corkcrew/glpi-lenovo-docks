@@ -1,0 +1,37 @@
+{
+  "format": "glpi-dock-preset",
+  "version": 1,
+  "settings": {},
+  "manufacturers": [
+    {
+      "id": "lenovo",
+      "name": "LENOVO",
+      "vids": ["17EF"],
+      "enabled": true,
+      "models": [
+        {
+          "id": "model-40ay",
+          "code": "40AY",
+          "name": "ThinkPad Universal USB-C Dock",
+          "pids": ["30A9", "3105"],
+          "enabled": true
+        }
+      ],
+      "rules": [
+        {
+          "id": "default",
+          "name": "Составной номер Lenovo",
+          "enabled": true,
+          "models": [],
+          "pids": [],
+          "action": "extract",
+          "pattern": "^1S([A-Z0-9]{10}|40[A-Z0-9]{2})([A-Z0-9]{8})$",
+          "serial_group": 2,
+          "extra": "part",
+          "extra_group": 1,
+          "check_model": true
+        }
+      ]
+    }
+  ]
+}
